@@ -9,8 +9,8 @@ package com.ykun.commons.utils.excel;
 
 import com.ykun.commons.utils.excel.annotation.ExcelField;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -26,7 +26,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 封装apache-poi，暂时不支持自动拆分sheet，单sheet数据大于65536会报错
+ * 封装apache-poi，暂时不支持自动拆分sheet，单sheet数据大于1048576会报错，基于xlsx
+ * <p>
+ * Excel 07-2003一个工作表最多可有65536行，行用数字1—65536表示;最多可有256列，列用英文字母A—Z，AA—AZ，BA—BZ，……，IA—IV表示；一个工作簿中最多含有255个工作表，默认情况下是三个工作表；
+ * Excel 2007及以后版本，一个工作表最多可有1048576行，16384列；
  *
  * @author YanKun 于 2017-02-08 11:04
  */
@@ -60,7 +63,7 @@ public class ExcelUtil {
     /**
      * Disposition
      */
-    private final static String PATTERN_DISPOSITION = "attachment; filename={0}.xls";
+    private final static String PATTERN_DISPOSITION = "attachment; filename={0}.xlsx";
 
     /**
      * 导出xls，headers使用注解ExcelField，不设置默认取属性名
@@ -97,25 +100,25 @@ public class ExcelUtil {
         }
 
         try {
-            HSSFWorkbook workbook = new HSSFWorkbook(); // 生成HSSFWorkbook
-            HSSFSheet sheet = workbook.createSheet(); // 生成Sheet
+            Workbook workbook = new XSSFWorkbook(); // XSSFWorkbook
+            Sheet sheet = workbook.createSheet(); // 生成Sheet
 
             // 生成表头
             int rowNo = 0;
-            HSSFCellStyle headerStyle = createHeaderStyle(workbook);
+            CellStyle headerStyle = createHeaderStyle(workbook);
             if (headers != null && headers.size() > 0) {
-                HSSFRow hssfRow = sheet.createRow(rowNo++);
+                Row row = sheet.createRow(rowNo++);
                 for (int i = 0; i < headers.size(); i++) {
-                    HSSFCell cell = hssfRow.createCell(i);
+                    Cell cell = row.createCell(i);
                     cell.setCellStyle(headerStyle);
                     cell.setCellValue(headers.get(i));
                 }
             }
 
             // 填充数据
-            HSSFCellStyle normalStyle = createNormalStyle(workbook);
+            CellStyle normalStyle = createNormalStyle(workbook);
             for (T t : list) {
-                HSSFRow row = sheet.createRow(rowNo++);
+                Row row = sheet.createRow(rowNo++);
                 Field[] fields = t.getClass().getDeclaredFields();
                 int column = 0;
                 for (int i = 0; i < fields.length; i++) {
@@ -146,11 +149,11 @@ public class ExcelUtil {
     /**
      * 生成第一列表头样式
      *
-     * @param workbook HSSFWorkbook
-     * @return HSSFCellStyle
+     * @param workbook Workbook
+     * @return CellStyle
      */
-    private static HSSFCellStyle createHeaderStyle(HSSFWorkbook workbook) {
-        HSSFCellStyle style = workbook.createCellStyle();
+    private static CellStyle createHeaderStyle(Workbook workbook) {
+        CellStyle style = workbook.createCellStyle();
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
         style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
@@ -167,7 +170,7 @@ public class ExcelUtil {
      * @param workbook
      * @return HSSFCellStyle
      */
-    private static HSSFCellStyle createNormalStyle(HSSFWorkbook workbook) {
+    private static CellStyle createNormalStyle(Workbook workbook) {
         return workbook.createCellStyle();
     }
 
@@ -206,8 +209,8 @@ public class ExcelUtil {
      * @param excelField
      * @return Cell
      */
-    private static Cell addCell(HSSFRow row, int column, Object value, ExcelField excelField) {
-        HSSFCell cell = row.createCell(column);
+    private static Cell addCell(Row row, int column, Object value, ExcelField excelField) {
+        Cell cell = row.createCell(column);
         if (value == null) {
             cell.setCellValue("");
         } else {
