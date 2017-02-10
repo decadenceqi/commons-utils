@@ -13,7 +13,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author YanKun 于 2017-02-08 11:04
+ * @author Ykun 于 2017-02-08 11:04
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

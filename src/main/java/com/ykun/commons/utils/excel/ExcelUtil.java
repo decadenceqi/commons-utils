@@ -31,7 +31,7 @@ import java.util.List;
  * Excel 07-2003一个工作表最多可有65536行，行用数字1—65536表示;最多可有256列，列用英文字母A—Z，AA—AZ，BA—BZ，……，IA—IV表示；一个工作簿中最多含有255个工作表，默认情况下是三个工作表；
  * Excel 2007及以后版本，一个工作表最多可有1048576行，16384列；
  *
- * @author YanKun 于 2017-02-08 11:04
+ * @author Ykun 于 2017-02-08 11:04
  */
 public class ExcelUtil {
 

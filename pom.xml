@@ -19,9 +19,11 @@
         <version.servlet>3.1.0</version.servlet>
         <version.commons-io>2.5</version.commons-io>
         <version.apache.commons.lang3>3.4</version.apache.commons.lang3>
+        <version.orika>1.5.0</version.orika>
     </properties>
 
     <dependencies>
+        <!-- apache utils -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -32,11 +34,15 @@
             <artifactId>commons-lang3</artifactId>
             <version>${version.apache.commons.lang3}</version>
         </dependency>
+
+        <!-- google guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${version.guava}</version>
         </dependency>
+
+        <!-- json lib -->
         <dependency>
             <groupId>net.sf.json-lib</groupId>
             <artifactId>json-lib</artifactId>
@@ -44,6 +50,7 @@
             <classifier>jdk15</classifier>
         </dependency>
 
+        <!-- servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -51,10 +58,25 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- apache poi -->
+        <!-- poi base + xls -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>${version.poi}</version>
+        </dependency>
+        <!-- poi xlsx -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${version.poi}</version>
+        </dependency>
+
+        <!-- orika mapper -->
+        <dependency>
+            <groupId>ma.glasnost.orika</groupId>
+            <artifactId>orika-core</artifactId>
+            <version>${version.orika}</version>
         </dependency>
     </dependencies>
 

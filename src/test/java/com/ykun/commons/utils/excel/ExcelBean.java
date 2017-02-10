@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Random;
 
 /**
- * @author YanKun 于 2017-02-08 11:31
+ * @author Ykun 于 2017-02-08 11:31
  */
 public class ExcelBean {
 
