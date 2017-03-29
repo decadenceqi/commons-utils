@@ -14,13 +14,13 @@ import java.util.List;
 /**
  * @author Ykun 于 2017-02-10 14:50
  */
-public class MapperTest {
+public class OrikaTest {
 
     public static void main(String[] args) {
 
         // bean copy
         Source source = new Source("zhangsan", 25, Arrays.asList(new String[]{"xxoo", "xxoo"}));
-        Destnation d = BeanMapper.map(source, Destnation.class);
+        Destnation d = OrikaMapper.map(source, Destnation.class);
 
         // List<T> copy
         Source source1 = new Source("zhangsan1", 21, Arrays.asList(new String[]{"oo", "xxoo"}));
@@ -30,7 +30,7 @@ public class MapperTest {
         sourceList.add(source1);
         sourceList.add(source2);
         sourceList.add(source3);
-        List<Destnation> list = BeanMapper.mapList(sourceList, Source.class, Destnation.class);
+        List<Destnation> list = OrikaMapper.mapList(sourceList, Source.class, Destnation.class);
 
     }
 

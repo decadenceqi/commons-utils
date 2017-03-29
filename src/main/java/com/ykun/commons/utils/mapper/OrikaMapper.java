@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author Ykun 于 2017-02-10 14:50
  */
-public class BeanMapper {
+public class OrikaMapper {
 
     /**
      * 单例
