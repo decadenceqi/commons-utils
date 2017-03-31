@@ -1,4 +1,4 @@
-package com.ykun.commons.util.excel;
+package com.ykun.commons.utils.excel;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;

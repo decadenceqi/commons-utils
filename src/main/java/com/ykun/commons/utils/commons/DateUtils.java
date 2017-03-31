@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.commons;
+package com.ykun.commons.utils.commons;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

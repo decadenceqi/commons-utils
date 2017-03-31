@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.constant;
+package com.ykun.commons.utils.constant;
 
 /**
  * 常量

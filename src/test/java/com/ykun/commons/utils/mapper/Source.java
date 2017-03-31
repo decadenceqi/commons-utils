@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.mapper;
+package com.ykun.commons.utils.mapper;
 
 import org.dozer.Mapping;
 

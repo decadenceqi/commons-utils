@@ -5,9 +5,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.excel;
+package com.ykun.commons.utils.excel;
 
-import com.ykun.commons.util.excel.annotation.ExcelField;
+import com.ykun.commons.utils.excel.annotation.ExcelField;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static com.ykun.commons.util.constant.Constant.CHARSET_UTF8;
+import static com.ykun.commons.utils.constant.Constant.CHARSET_UTF8;
 
 /**
  * 封装apache-poi，暂时不支持自动拆分sheet，单sheet数据大于1048576会报错，基于xlsx

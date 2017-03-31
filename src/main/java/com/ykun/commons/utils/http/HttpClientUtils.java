@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.http;
+package com.ykun.commons.utils.http;
 
 import org.apache.http.Consts;
 import org.apache.http.Header;
@@ -28,7 +28,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import static com.ykun.commons.util.constant.Constant.CHARSET_UTF8;
+import static com.ykun.commons.utils.constant.Constant.CHARSET_UTF8;
 
 /**
  * 简单封装HttpClient 4.5.x

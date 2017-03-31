@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.security;
+package com.ykun.commons.utils.security;
 
 import org.apache.commons.codec.binary.Base64;
 

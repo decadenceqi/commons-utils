@@ -5,13 +5,13 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.security;
+package com.ykun.commons.utils.security;
 
 import org.apache.commons.lang3.StringUtils;
 
 import java.security.MessageDigest;
 
-import static com.ykun.commons.util.constant.Constant.CHARSET_UTF8;
+import static com.ykun.commons.utils.constant.Constant.CHARSET_UTF8;
 
 /**
  * MD5加密

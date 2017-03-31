@@ -25,7 +25,7 @@
     </properties>
 
     <dependencies>
-        <!-- apache util -->
+        <!-- apache utils -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

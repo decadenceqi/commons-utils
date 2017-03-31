@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.http;
+package com.ykun.commons.utils.http;
 
 import org.apache.http.client.fluent.Form;
 import org.apache.http.client.fluent.Request;

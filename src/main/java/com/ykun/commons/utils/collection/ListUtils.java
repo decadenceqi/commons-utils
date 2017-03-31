@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.collection;
+package com.ykun.commons.utils.collection;
 
 import com.google.common.collect.Lists;
 

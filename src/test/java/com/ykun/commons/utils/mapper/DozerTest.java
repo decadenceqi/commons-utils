@@ -5,9 +5,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.mapper;
+package com.ykun.commons.utils.mapper;
 
-import com.ykun.commons.util.collection.ListUtils;
+import com.ykun.commons.utils.collection.ListUtils;
 
 import java.util.List;
 

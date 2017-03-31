@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.util.excel.annotation;
+package com.ykun.commons.utils.excel.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -30,7 +30,7 @@ public @interface ExcelField {
     boolean ignore() default false;
 
     /**
-     * 仅对java.util.Date类型生效，默认格式：yyyy-MM-dd HH:mm:ss
+     * 仅对java.utils.Date类型生效，默认格式：yyyy-MM-dd HH:mm:ss
      */
     String dateFormatter() default "yyyy-MM-dd HH:mm:ss";
 
