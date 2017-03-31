@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.collection;
+package com.ykun.commons.util.collection;
 
 import com.google.common.collect.Lists;
 
@@ -17,7 +17,7 @@ import java.util.*;
  *
  * @author Ykun 于 2017-02-13 15:35
  */
-public class ListUtil {
+public class ListUtils {
 
     /**
      * 判断集合是否为空

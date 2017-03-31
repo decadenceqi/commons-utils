@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.collection;
+package com.ykun.commons.util.collection;
 
 import com.google.common.collect.Maps;
 
@@ -19,7 +19,7 @@ import java.util.Map;
  *
  * @author Ykun 于 2017-02-15 14:53
  */
-public class MapUtil {
+public class MapUtils {
 
     /**
      * 判断是否为空

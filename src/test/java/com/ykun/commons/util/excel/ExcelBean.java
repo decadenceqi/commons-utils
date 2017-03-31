@@ -5,9 +5,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.excel;
+package com.ykun.commons.util.excel;
 
-import com.ykun.commons.utils.excel.annotation.ExcelField;
+import com.ykun.commons.util.excel.annotation.ExcelField;
 
 import java.util.Date;
 import java.util.Random;

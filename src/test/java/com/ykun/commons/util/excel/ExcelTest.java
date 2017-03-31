@@ -1,4 +1,4 @@
-package com.ykun.commons.utils.excel;
+package com.ykun.commons.util.excel;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class ExcelTest {
         }
 
         FileOutputStream fileOutputStream = new FileOutputStream("target/test.xls");
-        ExcelUtil.export(list, fileOutputStream);
+        ExcelUtils.export(list, fileOutputStream);
         fileOutputStream.close();
         System.out.println("end");
     }

@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.mapper;
+package com.ykun.commons.util.mapper;
 
 /**
  * @author Ykun 于 2017-03-29 14:27

@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.excel.annotation;
+package com.ykun.commons.util.excel.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

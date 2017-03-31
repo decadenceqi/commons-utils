@@ -5,9 +5,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.excel;
+package com.ykun.commons.util.excel;
 
-import com.ykun.commons.utils.excel.annotation.ExcelField;
+import com.ykun.commons.util.excel.annotation.ExcelField;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -25,6 +25,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import static com.ykun.commons.util.constant.Constant.CHARSET_UTF8;
+
 /**
  * 封装apache-poi，暂时不支持自动拆分sheet，单sheet数据大于1048576会报错，基于xlsx
  * <p>
@@ -33,7 +35,7 @@ import java.util.List;
  *
  * @author Ykun 于 2017-02-08 11:04
  */
-public class ExcelUtil {
+public class ExcelUtils {
 
     /**
      * 日期格式化
@@ -44,11 +46,6 @@ public class ExcelUtil {
      * get方法前缀
      */
     private final static String PREFIX_GETTER = "get";
-
-    /**
-     * UTF8字符集
-     */
-    private final static String CHARSET = "UTF-8";
 
     /**
      * xls 字符集
@@ -293,6 +290,6 @@ public class ExcelUtil {
      */
     private static void setContentType(HttpServletResponse response, String fileName) throws IOException {
         response.setContentType(CONTENT_TYPE);
-        response.setHeader(HEADER_CONTENT_DISPOSITION, MessageFormat.format(PATTERN_DISPOSITION, URLEncoder.encode(fileName, CHARSET)));
+        response.setHeader(HEADER_CONTENT_DISPOSITION, MessageFormat.format(PATTERN_DISPOSITION, URLEncoder.encode(fileName, CHARSET_UTF8)));
     }
 }

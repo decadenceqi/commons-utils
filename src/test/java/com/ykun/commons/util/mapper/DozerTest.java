@@ -5,9 +5,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.mapper;
+package com.ykun.commons.util.mapper;
 
-import com.ykun.commons.utils.collection.ListUtil;
+import com.ykun.commons.util.collection.ListUtils;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class DozerTest {
         Destination destination = DozerMapper.map(source, Destination.class);
         System.out.println(destination.toString());
 
-        List<Source> list = ListUtil.newArrayList(source, source, source);
+        List<Source> list = ListUtils.newArrayList(source, source, source);
         System.out.println(DozerMapper.mapList(list, Destination.class));
 
         Destination dest = new Destination();

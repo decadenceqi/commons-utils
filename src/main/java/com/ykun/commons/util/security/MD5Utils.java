@@ -5,20 +5,21 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.security;
+package com.ykun.commons.util.security;
 
 import org.apache.commons.lang3.StringUtils;
 
 import java.security.MessageDigest;
 
+import static com.ykun.commons.util.constant.Constant.CHARSET_UTF8;
+
 /**
- * md5
+ * MD5加密
  *
  * @author Ykun 于 2017-03-29 16:16
  */
-public class MD5Util {
+public class MD5Utils {
 
-    private final static String CHAR_SET = "UTF-8";
     private final static String DIGEST = "MD5";
 
     /**
@@ -31,7 +32,7 @@ public class MD5Util {
         StringBuilder result = new StringBuilder();
         try {
             MessageDigest md5 = MessageDigest.getInstance(DIGEST);
-            md5.update(str.getBytes(CHAR_SET));
+            md5.update(str.getBytes(CHARSET_UTF8));
             byte[] b = md5.digest();
             for (int i = 0; i < b.length; ++i) {
                 int x = b[i] & 0xFF;

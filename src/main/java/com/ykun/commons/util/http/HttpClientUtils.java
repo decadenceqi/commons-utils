@@ -5,7 +5,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License")
  */
 
-package com.ykun.commons.utils.http;
+package com.ykun.commons.util.http;
 
 import org.apache.http.Consts;
 import org.apache.http.Header;
@@ -28,12 +28,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import static com.ykun.commons.util.constant.Constant.CHARSET_UTF8;
+
 /**
  * 简单封装HttpClient 4.5.x
  *
  * @author Ykun 于 2017-03-28 10:20
  */
-public class HttpClientUtil {
+public class HttpClientUtils {
 
     /**
      * 连接超时，单位：毫秒
@@ -64,11 +66,6 @@ public class HttpClientUtil {
      * 可用空闲连接过期时间，重用空闲连接时会先检查是否空闲时间超过这个时间，如果超过，释放socket重新建立
      */
     private final static int VALIDATE_AFTER_INACTIVITY = 1000;
-
-    /**
-     * 默认字符集
-     */
-    private final static String CHARSET = "UTF-8";
 
     private final static String EMPTY_STRING = "";
     private final static String SYMBOL_MARK = "?";
@@ -130,7 +127,7 @@ public class HttpClientUtil {
         while (it.hasNext()) {
             String key = it.next();
             try {
-                builder.append(key).append(SYMBOL_EQUAL).append(URLEncoder.encode(params.get(key) == null ? EMPTY_STRING : params.get(key), CHARSET)).append(SYMBOL_CONNECTOR);
+                builder.append(key).append(SYMBOL_EQUAL).append(URLEncoder.encode(params.get(key) == null ? EMPTY_STRING : params.get(key), CHARSET_UTF8)).append(SYMBOL_CONNECTOR);
             } catch (UnsupportedEncodingException e) {
                 throw new RuntimeException(e);
             }
