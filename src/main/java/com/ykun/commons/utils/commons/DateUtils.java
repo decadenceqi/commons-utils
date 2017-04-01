@@ -168,7 +168,7 @@ public class DateUtils {
      * @throws
      * @Description:将日期字符串，按照pattern格式，某个时区解析为Date对象
      */
-    public static Date stringToDate(String date, String pattern, String timezone) {
+    public static Date stringToDate(String date, String pattern, TimeZone timezone) {
         Date newDate = null;
         try {
             SimpleDateFormat dateFormat = null;
@@ -177,7 +177,7 @@ public class DateUtils {
             } else {
                 dateFormat = new SimpleDateFormat(pattern);
             }
-            dateFormat.setTimeZone(TimeZone.getTimeZone(timezone));
+            dateFormat.setTimeZone(timezone);
             newDate = dateFormat.parse(date);
         } catch (Exception e) {
             logger.error("Convert Date Error:", e);
@@ -192,7 +192,7 @@ public class DateUtils {
      * @Description:将日期字符串，按照pattern格式，零时区解析为Date对象
      */
     public static Date stringToDate(String date, String pattern) {
-        return stringToDate(date, pattern, "GMT");
+        return stringToDate(date, pattern, TimeZone.getDefault());
     }
 
     /**
@@ -202,7 +202,7 @@ public class DateUtils {
      * @Description:将日期字符串，按照yyyy-MM-dd HH:mm:ss格式，零时区解析为Date对象
      */
     public static Date stringToDate(String date) {
-        return stringToDate(date, YYYY_MM_DD_HH_MM_SS, "GMT");
+        return stringToDate(date, YYYY_MM_DD_HH_MM_SS, TimeZone.getDefault());
     }
 
     /**
