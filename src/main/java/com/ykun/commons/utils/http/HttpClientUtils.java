@@ -7,6 +7,8 @@
 
 package com.ykun.commons.utils.http;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.Consts;
 import org.apache.http.Header;
 import org.apache.http.NameValuePair;
@@ -36,6 +38,8 @@ import static com.ykun.commons.utils.constant.Constant.CHARSET_UTF8;
  * @author Ykun 于 2017-03-28 10:20
  */
 public class HttpClientUtils {
+
+    private final static Log logger = LogFactory.getLog(HttpClientUtils.class);
 
     /**
      * 连接超时，单位：毫秒
@@ -129,6 +133,7 @@ public class HttpClientUtils {
             try {
                 builder.append(key).append(SYMBOL_EQUAL).append(URLEncoder.encode(params.get(key) == null ? EMPTY_STRING : params.get(key), CHARSET_UTF8)).append(SYMBOL_CONNECTOR);
             } catch (UnsupportedEncodingException e) {
+                logger.error("Parse Url error", e);
                 throw new RuntimeException(e);
             }
         }
@@ -153,6 +158,7 @@ public class HttpClientUtils {
 
     /**
      * 执行request
+     *
      * @param request Request
      * @return String
      */
@@ -160,7 +166,7 @@ public class HttpClientUtils {
         try {
             return executor.execute(request).returnContent().asString(Consts.UTF_8);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Execute request error", e);
         }
         return null;
     }

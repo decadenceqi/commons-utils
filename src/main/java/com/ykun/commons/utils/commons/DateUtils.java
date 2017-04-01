@@ -7,6 +7,9 @@
 
 package com.ykun.commons.utils.commons;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,6 +22,8 @@ import java.util.TimeZone;
  */
 
 public class DateUtils {
+
+    private final static Log logger = LogFactory.getLog(DateUtils.class);
 
     public static final String YYYY_MM = "yyyy-MM";
 
@@ -175,7 +180,7 @@ public class DateUtils {
             dateFormat.setTimeZone(TimeZone.getTimeZone(timezone));
             newDate = dateFormat.parse(date);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Convert Date Error:", e);
         }
         return newDate;
     }

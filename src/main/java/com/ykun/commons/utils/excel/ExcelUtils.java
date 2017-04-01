@@ -9,6 +9,8 @@ package com.ykun.commons.utils.excel;
 
 import com.ykun.commons.utils.excel.annotation.ExcelField;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -36,6 +38,8 @@ import static com.ykun.commons.utils.constant.Constant.CHARSET_UTF8;
  * @author Ykun 于 2017-02-08 11:04
  */
 public class ExcelUtils {
+
+    private final static Log logger = LogFactory.getLog(ExcelUtils.class);
 
     /**
      * 日期格式化
@@ -139,6 +143,7 @@ public class ExcelUtils {
             }
             workbook.write(out);
         } catch (Exception e) {
+            logger.error("Export error:", e);
             throw new RuntimeException(e);
         }
     }

@@ -8,6 +8,8 @@
 package com.ykun.commons.utils.security;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.security.MessageDigest;
 
@@ -19,6 +21,8 @@ import static com.ykun.commons.utils.constant.Constant.CHARSET_UTF8;
  * @author Ykun 于 2017-03-29 16:16
  */
 public class MD5Utils {
+
+    private final static Log logger = LogFactory.getLog(MD5Utils.class);
 
     private final static String DIGEST = "MD5";
 
@@ -42,6 +46,7 @@ public class MD5Utils {
                 result.append((char) (l + ((l < 10) ? '0' : 'a' - 10)));
             }
         } catch (Exception e) {
+            logger.error("md5 error:", e);
             throw new RuntimeException(e);
         }
         return result.toString();
